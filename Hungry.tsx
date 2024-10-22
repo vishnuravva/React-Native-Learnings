@@ -118,24 +118,32 @@
 
 // export default App;
 
-import React from "react";
+import React, { useState } from "react";
 import 
 {
   View,
   SafeAreaView,
-  Text
+  Text,
+  Button
 } 
 from "react-native"
-import Hungry from "./Hungry";
 
-
+type hungryProps = {
+  name:string
+  status:string
+}
  
-function App(){
+function Hungry(props:hungryProps){
+    const [isFull, setIsFull] = useState(false)
 return(
   <View>
-    <Hungry status="hungry" name="Yash" />
-    <Hungry status="hungry" name="Harish"/>
+    <Text>I am {props.name} and, I am {isFull ? "I am full":"I am hungry"}</Text>
+    <Button onPress={() => {
+        setIsFull(true)
+    }} 
+    disabled={isFull}
+    title={isFull ? "Thank You" : "Feed Them"}/>
   </View>
 )
 }
-export default App;
+export default Hungry;
