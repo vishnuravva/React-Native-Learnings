@@ -9,4 +9,5 @@ import PizzaTranslate from './PizzaTranslate';
 import ScrollViewDemo from './ScrollViewDemo';
 import FlatListBasics from './FlatListBasics';
 import SectionListBasics from './SectionListBasics';
-AppRegistry.registerComponent(appName, () => SectionListBasics);
+import FetchMovies from './FetchMovies';
+AppRegistry.registerComponent(appName, () => FetchMovies);
